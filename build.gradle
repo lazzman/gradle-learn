@@ -2,10 +2,11 @@ plugins {
     id 'java'
 }
 
+// ext常用语定义全局变量，可以被当前project、task、subproject读取
 ext {
     println 'set ext start'
-    NAME = "zhangsan"
-    AGE = "14"
+    NAME = "zhangsan" // 本质上调用org.gradle.internal.extensibility.DefaultExtraPropertiesExtension#set方法
+    AGE = "14" // 本质上调用org.gradle.internal.extensibility.DefaultExtraPropertiesExtension#set方法
     println 'set ext end'
 }
 
@@ -40,5 +41,15 @@ println "build"
 
 println name
 println projectDir
+// 本质上调用org.gradle.internal.extensibility.DefaultExtraPropertiesExtension#getProperties方法
+println ext.properties
 
 println ext.NAME
+
+// 为./gradlew命令指定默认执行task
+//defaultTasks("test")
+
+task myTask {
+}
+
+println myTask.class
