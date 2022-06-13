@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+}
+
+ext {
+    println 'set ext start'
+    NAME = "zhangsan"
+    AGE = "14"
+    println 'set ext end'
+}
+
+println 'set group start'
+group 'com.lazzman'
+println 'set group end'
+
+println 'set version start'
+version '1.0-SNAPSHOT'
+println 'set version end'
+
+repositories {
+    println 'add repositories start'
+    mavenCentral()
+    println 'add repositories end'
+}
+
+dependencies {
+    println 'add dependencies start'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    println 'add dependencies end'
+}
+
+test {
+    println 'add test start'
+    useJUnitPlatform()
+    println 'add test end'
+}
+
+println "build"
+
+println name
+println projectDir
+
+println ext.NAME

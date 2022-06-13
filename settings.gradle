@@ -1,0 +1,6 @@
+rootProject.name = 'gradle-learn'
+include 'first-gradle'
+include 'first-gradle:first-gradle-child'
+findProject(':first-gradle:first-gradle-child')?.name = 'first-gradle-child'
+
+println "settings"
