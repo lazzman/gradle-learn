@@ -52,4 +52,4 @@ println ext.NAME
 task myTask {
 }
 
-println myTask.class
+println aa
